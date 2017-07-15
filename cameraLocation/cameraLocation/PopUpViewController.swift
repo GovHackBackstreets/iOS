@@ -13,12 +13,12 @@ class PopUpViewController: UIViewController {
     
     
     var stringFromGR = String()
+    @IBOutlet weak var storeNameString: SkyFloatingLabelTextField!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         print(stringFromGR)
-        
-        
         
         
     }
