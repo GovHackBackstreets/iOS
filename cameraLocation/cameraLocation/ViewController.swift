@@ -15,11 +15,12 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
         sender.setTitle("capture", for: .normal)
         sender.addTarget(self, action:#selector(scanAction(_:)) , for: .touchUpInside)
         sender.translatesAutoresizingMaskIntoConstraints = false
+        sender.setTitleColor(UIColor.blue, for: .normal)
         self.sender = sender
         self.view.addSubview(sender)
         
         sender.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -100).isActive = true
-        sender.
+        sender.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor, constant: 0).isActive = true
         
         
     }
@@ -33,8 +34,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     }()
 
     @IBAction func scanAction(_ sender: AnyObject) {
-        // Retrieve the QRCode content
-        // By using the delegate pattern
+
         readerVC.delegate = self
         readerVC.completionBlock = { (result: QRCodeReaderResult?) in
             print(result!)
