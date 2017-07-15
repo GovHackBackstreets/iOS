@@ -26,6 +26,10 @@
 	<string>Main</string>
 	<key>NSCameraUsageDescription</key>
 	<string>need to access camera</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Let app use location</string>
+	<key>NSLocationUsageDescription</key>
+	<string>When in use please</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

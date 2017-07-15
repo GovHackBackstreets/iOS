@@ -44,7 +44,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ww-Id-340" customClass="designView" customModule="cameraLocation" customModuleProvider="target">
-                                <rect key="frame" x="67" y="154" width="240" height="151"/>
+                                <rect key="frame" x="67" y="154" width="240" height="213"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -57,7 +57,7 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="3ww-Id-340" secondAttribute="trailing" constant="52" id="7pv-XL-pcC"/>
                             <constraint firstItem="3ww-Id-340" firstAttribute="top" secondItem="5KK-Ca-Td4" secondAttribute="bottom" constant="134" id="D9x-Dh-Lrn"/>
-                            <constraint firstItem="jkm-1T-VZX" firstAttribute="top" secondItem="3ww-Id-340" secondAttribute="bottom" constant="362" id="Yvl-um-q9p"/>
+                            <constraint firstItem="jkm-1T-VZX" firstAttribute="top" secondItem="3ww-Id-340" secondAttribute="bottom" constant="300" id="Yvl-um-q9p"/>
                             <constraint firstItem="3ww-Id-340" firstAttribute="leading" secondItem="eYl-fi-clb" secondAttribute="leadingMargin" constant="51" id="dzV-VA-vRA"/>
                         </constraints>
                     </view>
