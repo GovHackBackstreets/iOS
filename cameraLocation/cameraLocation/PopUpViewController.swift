@@ -29,6 +29,16 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var storeNameString: SkyFloatingLabelTextField!
     @IBOutlet weak var popUpView: designView!
     @IBOutlet weak var upload: UIButton!
+
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UILabel!
+    @IBOutlet weak var label3: UILabel!
+    @IBOutlet weak var label4: UILabel!
+    
+    @IBOutlet weak var forLabel1: SkyFloatingLabelTextField!
+    @IBOutlet weak var forLabel2: SkyFloatingLabelTextField!
+    @IBOutlet weak var forLabel3: SkyFloatingLabelTextField!
+    @IBOutlet weak var forLabel4: SkyFloatingLabelTextField!
     
     @IBOutlet weak var labelEx: UILabel!
 
@@ -49,7 +59,35 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
         let storeLabel = SkyFloatingLabelTextField(frame: CGRect(x: 0, y: 0, width: 50, height: 10))
         let genericColor = UIColor(red:90/255, green:187/255, blue:234/255, alpha:1.0)
         let upload = UIButton()
-    
+        let label1 = UILabel()
+        let label2 = UILabel()
+        let label3 = UILabel()
+        let label4 = UILabel()
+        
+        let forLabel1 = SkyFloatingLabelTextField()
+        let forLabel2 = SkyFloatingLabelTextField()
+        let forLabel3 = SkyFloatingLabelTextField()
+        let forLabel4 = SkyFloatingLabelTextField()
+
+        self.label1 = label1
+        self.label2 = label2
+        self.label3 = label3
+        self.label4 = label4
+        
+        self.forLabel1 = forLabel1
+        self.forLabel2 = forLabel2
+        self.forLabel3 = forLabel3
+        self.forLabel4 = forLabel4
+        
+        setupNsConstraints(labels: label1, height: 80,  text: "Physical Quality")
+        setupNsConstraints(labels: label2, height: 120, text: "Chemical Contaminents")
+        setupNsConstraints(labels: label3, height: 160, text: "Microbial Safety")
+        setupNsConstraints(labels: label4, height: 200, text: "Temperature Control")
+        
+        setupNsConstraintsNumber(labels: forLabel1, height: 80, text: "score")
+        setupNsConstraintsNumber(labels: forLabel2, height: 120, text: "score")
+        setupNsConstraintsNumber(labels: forLabel3, height: 160, text: "score")
+        setupNsConstraintsNumber(labels: forLabel4, height: 200, text: "score")
         
         upload.translatesAutoresizingMaskIntoConstraints = false
         upload.setImage(UIImage(named: "upload"), for: .normal)
@@ -76,17 +114,53 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
         storeLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         upload.centerXAnchor.constraint(equalTo: popUpView.layoutMarginsGuide.centerXAnchor, constant: 0).isActive = true
-        upload.bottomAnchor.constraint(equalTo: popUpView.layoutMarginsGuide.bottomAnchor, constant: 0).isActive = true
-        upload.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        upload.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        upload.bottomAnchor.constraint(equalTo: popUpView.layoutMarginsGuide.bottomAnchor, constant: 10).isActive = true
+        upload.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        upload.heightAnchor.constraint(equalToConstant: 60).isActive = true
     
+    }
+    
+    private func setupNsConstraints(labels: UILabel, height: CGFloat, text: String) {
+        
+        labels.font = UIFont(name: "Avenir-Black", size: 13.0)
+        labels.text = text
+        labels.textColor = UIColor.black
+        labels.translatesAutoresizingMaskIntoConstraints = false
+        self.popUpView.addSubview(labels)
+        
+        labels.leadingAnchor.constraint(equalTo: popUpView.layoutMarginsGuide.leadingAnchor, constant: 10).isActive = true
+        labels.topAnchor.constraint(equalTo: popUpView.layoutMarginsGuide.topAnchor, constant: height).isActive = true
+        
+    }
+    private func setupNsConstraintsNumber(labels: SkyFloatingLabelTextField, height: CGFloat, text: String) {
+        
+        let genericColor = UIColor(red:90/255, green:187/255, blue:234/255, alpha:1.0)
+        
+        labels.placeholder = text
+        labels.title = text
+        labels.textAlignment = .center
+        labels.errorColor = UIColor.red
+        labels.delegate = self
+        labels.translatesAutoresizingMaskIntoConstraints = false
+        labels.lineHeight = 1.5
+        labels.selectedLineHeight = 3.5
+        labels.selectedLineColor = genericColor
+        labels.selectedTitleColor = genericColor
+        labels.tintColor = genericColor
+        self.storeNameString = labels
+        self.popUpView.addSubview(labels)
+        
+        labels.trailingAnchor.constraint(equalTo: popUpView.layoutMarginsGuide.trailingAnchor, constant: -10).isActive = true
+        labels.topAnchor.constraint(equalTo: popUpView.layoutMarginsGuide.topAnchor, constant: height-20).isActive = true
+        labels.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        labels.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
     }
     
     func keyboardWillShow(notification: NSNotification) {
         if ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
             if self.view.frame.origin.y == 0{
-                self.popUpView.frame.origin.y -= 50
+                self.popUpView.frame.origin.y -= 20
             }
         }
     }
@@ -94,7 +168,7 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
     func keyboardWillhide(notification: NSNotification) {
         if ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
             if self.view.frame.origin.y != 0{
-                self.popUpView.frame.origin.y += 50
+                self.popUpView.frame.origin.y += 20
             }
         }
     }
@@ -123,17 +197,25 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
     func createDictionary(location: location, supplier: String) -> [String: Any] {
         let latitude = location.latitude!
         let longitude = location.longitude!
+        var dict: [String: Any] = [:]
         
-        let dictionary: [String: Any] = [
+        if let physical = Double(label1.text!), let chemical = Double(label2.text!), let microbial = Double(label3.text!), let temp = Double(label4.text!) {
+        
+        dict = [
             "location": ["lat": "\(latitude)", "long": "\(longitude)"],
             "supplier": supplier,
             "rating": 1.3,
-            
+            "physicalQuality": physical,
+            "chemicalContaminents": chemical,
+            "microbialSafety": microbial,
+            "temperatureControl": temp,
         ]
         
-        return dictionary
+        }
+        return dict
+
     }
-    
+
     
     
     
