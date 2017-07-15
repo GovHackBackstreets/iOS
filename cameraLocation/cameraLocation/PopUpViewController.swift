@@ -39,14 +39,6 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         setup()
         
-        
-        
-        let locate = location(lat: "51.1111", long: "-0.12121")
-
-        let dict = createDictionary(location: locate)
-        
-        apiPost.post(parameters: dict, id: stringFromGR)
-        
     }
     
     private func setup() {
@@ -56,9 +48,10 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
         let upload = UIButton()
         
         upload.translatesAutoresizingMaskIntoConstraints = false
-        upload.setImage(UIImage(), for: .normal)
+        upload.setImage(UIImage(named: "upload"), for: .normal)
         upload.tag = 1
         upload.addTarget(self, action: #selector(setToApiClass(_:)), for: .touchUpInside)
+        self.popUpView.addSubview(upload)
         
         storeLabel.placeholder = "Supplier"
         storeLabel.title = "Supplier"
@@ -76,6 +69,12 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
         storeLabel.centerYAnchor.constraint(equalTo: popUpView.layoutMarginsGuide.centerYAnchor, constant: -30).isActive = true
         storeLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
         storeLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        upload.centerXAnchor.constraint(equalTo: popUpView.layoutMarginsGuide.centerXAnchor, constant: 0).isActive = true
+        upload.centerYAnchor.constraint(equalTo: popUpView.layoutMarginsGuide.centerYAnchor, constant: 30).isActive = true
+        upload.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        upload.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
 
     }
     
@@ -83,19 +82,23 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
         
         if sender.tag == 1 {
             
+            let suppplier = self.storeNameString.text
+            let locate = location(lat: "51.1111", long: "-0.12121")
+            let dict = createDictionary(location: locate, supplier: suppplier!)
             
+            apiPost.post(parameters: dict, id: self.stringFromGR)
             
         }
         
     }
     
-    func createDictionary(location: location) -> [String: Any] {
+    func createDictionary(location: location, supplier: String) -> [String: Any] {
         let latitude = location.latitude!
         let longitude = location.longitude!
         
         let dictionary: [String: Any] = [
             "location": ["lat": "\(latitude)", "long": "\(longitude)"],
-            "supplier": "tesco",
+            "supplier": supplier,
         ]
         
         return dictionary

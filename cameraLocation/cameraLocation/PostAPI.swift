@@ -14,14 +14,17 @@ class PostApi {
         
         let urlToRequest = "https://govhacksapi.herokuapp.com/scan/\(id)"
         
-            let url = URL(string: urlToRequest)!
+        let url = URL(string: urlToRequest)!
+    
+        let session4 = URLSession.shared
+        let request = NSMutableURLRequest(url: url)
+        request.httpMethod = "POST"
+        request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
         
-            let session4 = URLSession.shared
-            let request = NSMutableURLRequest(url: url)
-            request.httpMethod = "POST"
-            request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
-            let paramString = "data=Hello"
-            request.httpBody = paramString.data(using: String.Encoding.utf8)
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
+
+            request.httpBody = jsonData
             let task = session4.dataTask(with: request as URLRequest) { (data, response, error) in
                 
                 guard let _: Data = data, let _: URLResponse = response, error == nil else {
@@ -32,8 +35,12 @@ class PostApi {
                 print("*****This is the data 4: \(String(describing: dataString))")
                 
             }
-
+            
             task.resume()
+        } catch {
+            print(error.localizedDescription)
+        }
+
     }
 }
 
