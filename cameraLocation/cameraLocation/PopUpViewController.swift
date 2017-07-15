@@ -49,6 +49,7 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
         let storeLabel = SkyFloatingLabelTextField(frame: CGRect(x: 0, y: 0, width: 50, height: 10))
         let genericColor = UIColor(red:90/255, green:187/255, blue:234/255, alpha:1.0)
         let upload = UIButton()
+    
         
         upload.translatesAutoresizingMaskIntoConstraints = false
         upload.setImage(UIImage(named: "upload"), for: .normal)
@@ -78,14 +79,14 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
         upload.bottomAnchor.constraint(equalTo: popUpView.layoutMarginsGuide.bottomAnchor, constant: 0).isActive = true
         upload.widthAnchor.constraint(equalToConstant: 40).isActive = true
         upload.heightAnchor.constraint(equalToConstant: 40).isActive = true
+    
         
-
     }
     
     func keyboardWillShow(notification: NSNotification) {
         if ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
             if self.view.frame.origin.y == 0{
-                self.view.frame.origin.y -= 50
+                self.popUpView.frame.origin.y -= 50
             }
         }
     }
@@ -93,7 +94,7 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
     func keyboardWillhide(notification: NSNotification) {
         if ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
             if self.view.frame.origin.y != 0{
-                self.view.frame.origin.y += 50
+                self.popUpView.frame.origin.y += 50
             }
         }
     }
@@ -109,6 +110,14 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
             
         }
         
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let field = textField as? SkyFloatingLabelTextField {
+            field.resignFirstResponder()
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillhide(notification:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+        }
+        return true
     }
     
     func createDictionary(location: location, supplier: String) -> [String: Any] {
