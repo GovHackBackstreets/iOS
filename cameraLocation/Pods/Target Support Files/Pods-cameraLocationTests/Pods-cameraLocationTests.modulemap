@@ -1,0 +1,6 @@
+framework module Pods_cameraLocationTests {
+  umbrella header "Pods-cameraLocationTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,906 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D7E3570AF271933553776EF32A7DEC0 /* QRCodeReaderViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC8171D6255279BF12A8BB7D88EB3D /* QRCodeReaderViewContainer.swift */; };
+		1FC06478C17DAB886A57D3165534D2B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828B7422B8C5C7BC4BF9C20A6D7B397 /* Foundation.framework */; };
+		29A7AAC4DDB102487972215AD82D1D5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828B7422B8C5C7BC4BF9C20A6D7B397 /* Foundation.framework */; };
+		3B6A413A6B3590A90C43403E3E7A40A6 /* Pods-cameraLocation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF08E7E189FAA9EAE1DB3EB9E864BE1 /* Pods-cameraLocation-dummy.m */; };
+		4490D28FEB531F292E1A6FAA911FCA17 /* Pods-cameraLocationTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BDBDAA4EBF19D201EAA38F66A2983468 /* Pods-cameraLocationTests-dummy.m */; };
+		49DD1D090CC595D44AF6BC5892CF193A /* Pods-cameraLocation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C59C989218E090B5E2C4E36B59F2D013 /* Pods-cameraLocation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		565F45D8935670821EE9E07296E6CA27 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828B7422B8C5C7BC4BF9C20A6D7B397 /* Foundation.framework */; };
+		6008C7DFEB6F4100BED1B68282E4375A /* Pods-cameraLocationUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6322E02325CD493765D5908DF46BC978 /* Pods-cameraLocationUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		607819C3A4A5E7DCBBB6324168732FB9 /* Pods-cameraLocationTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 88DCFDB95CE66835336C2144F57B4AAB /* Pods-cameraLocationTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D6AD7FC179C474736A457704558993F /* QRCodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A6BF43DC606A4EC7D6B96C6B73A467 /* QRCodeReader.swift */; };
+		6FC5134730EDF22944DA1BA91CBBC97D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828B7422B8C5C7BC4BF9C20A6D7B397 /* Foundation.framework */; };
+		8C6A694BA361159AA8992EAD038DC298 /* QRCodeReader.swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E22DD59E3B196604A594A6E76F7F223 /* QRCodeReader.swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		96F7EEEA28D000841C7C0135382EC0BF /* QRCodeReaderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997F2006A4635CF96F9927726CA541A5 /* QRCodeReaderResult.swift */; };
+		9C634137F9AB67F4802FC1764DEA4BC5 /* SwitchCameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0790DDDBBDD3828C068594029B4CC68 /* SwitchCameraButton.swift */; };
+		BE50F5F95029D8E41E45F6139728453E /* ToggleTorchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450BF8EC95275AC1EA704C812F320368 /* ToggleTorchButton.swift */; };
+		C031B9F1B4524E130DC5121CCFBD36BD /* ReaderOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB8036F7EA41F8974814D486A983AD0 /* ReaderOverlayView.swift */; };
+		CCBEBEB0C4DB987A9392F652EF2792AB /* QRCodeReaderViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E583598A1CD746109A6D9D6B58C6ACA6 /* QRCodeReaderViewControllerDelegate.swift */; };
+		CD100304AE93731D6301B1E89A26D9A8 /* QRCodeReaderViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E9952CA8B7B2098C4B3E3D6D6EBF94 /* QRCodeReaderViewControllerBuilder.swift */; };
+		DA544BDE5AB9230AC210BBF261D3C487 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840966EAD0718963750ABB9F4A6EB218 /* AVFoundation.framework */; };
+		DD92AEE5828FB93DBCBA8E7DDC92B436 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D837D4B84D940A1740E66CA79BD34 /* QRCodeReaderView.swift */; };
+		F59F42CDFFF79070BD73297EC5F84E60 /* QRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9EDE86BE20180C30E5290B18A9A85 /* QRCodeReaderViewController.swift */; };
+		F5A85FC19759C904BFE1219479AFF204 /* QRCodeReader.swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4BA15999CE7D8721AF3A8864E496E7 /* QRCodeReader.swift-dummy.m */; };
+		F814FF8BD9CFF0B9BC8FB2F30F29DB65 /* Pods-cameraLocationUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B9ED6DED13A09319716A3B6817F92C1B /* Pods-cameraLocationUITests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		737364446210B7F3D88D33C4BDCB8913 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A753E2FE9DD5151CB533F464934BA2FD;
+			remoteInfo = QRCodeReader.swift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0B7A16F3715409C3A6426546A72DB01D /* Pods-cameraLocationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-cameraLocationTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0BB9EDE86BE20180C30E5290B18A9A85 /* QRCodeReaderViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeReaderViewController.swift; path = Sources/QRCodeReaderViewController.swift; sourceTree = "<group>"; };
+		1FB4347828B2841EBB320309DA67456D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FD408C4DE48EF486D1B74026A1357B3 /* Pods-cameraLocation-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-cameraLocation-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2399868567F280468073BAABDA621733 /* Pods_cameraLocationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_cameraLocationUITests.framework; path = "Pods-cameraLocationUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		24A6BF43DC606A4EC7D6B96C6B73A467 /* QRCodeReader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeReader.swift; path = Sources/QRCodeReader.swift; sourceTree = "<group>"; };
+		253F1183D8C8F892CF60B5FDCAAA5792 /* Pods-cameraLocationUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-cameraLocationUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2828B7422B8C5C7BC4BF9C20A6D7B397 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		33CABC33ECA391D7B1EF0E1385BDA1A7 /* Pods_cameraLocationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_cameraLocationTests.framework; path = "Pods-cameraLocationTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3445DBDA9B165FE499C51FD0F07E4B91 /* Pods-cameraLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-cameraLocation.release.xcconfig"; sourceTree = "<group>"; };
+		3F082A0E5E2AAB8B22B1F2A42B98D76F /* Pods-cameraLocation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-cameraLocation.modulemap"; sourceTree = "<group>"; };
+		42FEB601CE7EE366BDD8CFF3AB6ADA97 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		450BF8EC95275AC1EA704C812F320368 /* ToggleTorchButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToggleTorchButton.swift; path = Sources/ToggleTorchButton.swift; sourceTree = "<group>"; };
+		46FC94B3F79E0B47D00ED8DCA58C488B /* Pods-cameraLocation-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-cameraLocation-frameworks.sh"; sourceTree = "<group>"; };
+		4A8B5F7A4766B070669FBB7B4E767064 /* Pods-cameraLocationUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-cameraLocationUITests.modulemap"; sourceTree = "<group>"; };
+		567A2B42E6096DBCE308D9E6611552FB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B14F39C2F556395669220242F8E4FB8 /* Pods-cameraLocationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-cameraLocationUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5E243D605ED6CB1728A71E2E52A4785F /* Pods-cameraLocationTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-cameraLocationTests-resources.sh"; sourceTree = "<group>"; };
+		610379E1D6C4FA2401A19A6BEBFE8BBA /* Pods-cameraLocationTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-cameraLocationTests-frameworks.sh"; sourceTree = "<group>"; };
+		6322E02325CD493765D5908DF46BC978 /* Pods-cameraLocationUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-cameraLocationUITests-umbrella.h"; sourceTree = "<group>"; };
+		6A2310BB4419DDBA6A1121501EC8732A /* Pods-cameraLocationTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-cameraLocationTests.modulemap"; sourceTree = "<group>"; };
+		6ACC8171D6255279BF12A8BB7D88EB3D /* QRCodeReaderViewContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeReaderViewContainer.swift; path = Sources/QRCodeReaderViewContainer.swift; sourceTree = "<group>"; };
+		747B9881145AD8CB6057B21A0EE3D557 /* Pods-cameraLocationTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-cameraLocationTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		775198421FFB73336099D0D4B328609F /* Pods-cameraLocation-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-cameraLocation-resources.sh"; sourceTree = "<group>"; };
+		81ED2746A70E1255248E699111596F0F /* QRCodeReader.swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = QRCodeReader.swift.xcconfig; sourceTree = "<group>"; };
+		840966EAD0718963750ABB9F4A6EB218 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		88DCFDB95CE66835336C2144F57B4AAB /* Pods-cameraLocationTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-cameraLocationTests-umbrella.h"; sourceTree = "<group>"; };
+		8B63EA79F8483E5D86A835CE96C560EB /* QRCodeReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = QRCodeReader.framework; path = QRCodeReader.swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C5BCBAC8DB459E98351EF90E8985F35 /* Pods-cameraLocationUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-cameraLocationUITests-frameworks.sh"; sourceTree = "<group>"; };
+		8DF08E7E189FAA9EAE1DB3EB9E864BE1 /* Pods-cameraLocation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-cameraLocation-dummy.m"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		942F240931B85500908B11AEC8F88EEA /* Pods-cameraLocationUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-cameraLocationUITests-resources.sh"; sourceTree = "<group>"; };
+		99251CA11B5646FD5910B8315F1978D1 /* QRCodeReader.swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QRCodeReader.swift-prefix.pch"; sourceTree = "<group>"; };
+		997F2006A4635CF96F9927726CA541A5 /* QRCodeReaderResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeReaderResult.swift; path = Sources/QRCodeReaderResult.swift; sourceTree = "<group>"; };
+		9E22DD59E3B196604A594A6E76F7F223 /* QRCodeReader.swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QRCodeReader.swift-umbrella.h"; sourceTree = "<group>"; };
+		A122C31490425CC0C9E5B9E7ACC49EED /* Pods-cameraLocationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-cameraLocationUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A67C7A648372E1398F7C22BA38D2C966 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB4752CB05A545D141D57EE9CE51D6E8 /* QRCodeReader.swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = QRCodeReader.swift.modulemap; sourceTree = "<group>"; };
+		ACB8036F7EA41F8974814D486A983AD0 /* ReaderOverlayView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReaderOverlayView.swift; path = Sources/ReaderOverlayView.swift; sourceTree = "<group>"; };
+		B0790DDDBBDD3828C068594029B4CC68 /* SwitchCameraButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwitchCameraButton.swift; path = Sources/SwitchCameraButton.swift; sourceTree = "<group>"; };
+		B64A56981C5D10BAD4F99FA2471D7777 /* Pods-cameraLocationTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-cameraLocationTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B9ED6DED13A09319716A3B6817F92C1B /* Pods-cameraLocationUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-cameraLocationUITests-dummy.m"; sourceTree = "<group>"; };
+		BDBDAA4EBF19D201EAA38F66A2983468 /* Pods-cameraLocationTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-cameraLocationTests-dummy.m"; sourceTree = "<group>"; };
+		C167D55FEDECC7605538A69ED7E93A4D /* Pods-cameraLocationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-cameraLocationTests.release.xcconfig"; sourceTree = "<group>"; };
+		C48D837D4B84D940A1740E66CA79BD34 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeReaderView.swift; path = Sources/QRCodeReaderView.swift; sourceTree = "<group>"; };
+		C59C989218E090B5E2C4E36B59F2D013 /* Pods-cameraLocation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-cameraLocation-umbrella.h"; sourceTree = "<group>"; };
+		C924E6E872C367EA257F8B8C3215B5EF /* Pods-cameraLocation-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-cameraLocation-acknowledgements.plist"; sourceTree = "<group>"; };
+		CDB6E230588B897266CB7DF0585CAF5A /* Pods_cameraLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_cameraLocation.framework; path = "Pods-cameraLocation.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA4BA15999CE7D8721AF3A8864E496E7 /* QRCodeReader.swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "QRCodeReader.swift-dummy.m"; sourceTree = "<group>"; };
+		E583598A1CD746109A6D9D6B58C6ACA6 /* QRCodeReaderViewControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeReaderViewControllerDelegate.swift; path = Sources/QRCodeReaderViewControllerDelegate.swift; sourceTree = "<group>"; };
+		F4E9952CA8B7B2098C4B3E3D6D6EBF94 /* QRCodeReaderViewControllerBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeReaderViewControllerBuilder.swift; path = Sources/QRCodeReaderViewControllerBuilder.swift; sourceTree = "<group>"; };
+		F5BC9D3FF89ECD3D5979F9C0C423691D /* Pods-cameraLocationUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-cameraLocationUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		FD43D1F32B24E20F0F28DE2F94B6D69E /* Pods-cameraLocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-cameraLocation.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		458F24FFC177D37B1A9A37CB400E4EB2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				565F45D8935670821EE9E07296E6CA27 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98767B2813D4F7A0C33873EE41676D2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FC06478C17DAB886A57D3165534D2B4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7F185814ACB4419303AB25588F8FA2D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29A7AAC4DDB102487972215AD82D1D5F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8F4A89BD6BB31FCAE07A4710100AB35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA544BDE5AB9230AC210BBF261D3C487 /* AVFoundation.framework in Frameworks */,
+				6FC5134730EDF22944DA1BA91CBBC97D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0064BB3FC21AF574E593EE779CC48429 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A958ABA0FBE63EBD0BEF860CD122D213 /* QRCodeReader.swift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		1D6225892D9832DE824DE130C11F797D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				567A2B42E6096DBCE308D9E6611552FB /* Info.plist */,
+				AB4752CB05A545D141D57EE9CE51D6E8 /* QRCodeReader.swift.modulemap */,
+				81ED2746A70E1255248E699111596F0F /* QRCodeReader.swift.xcconfig */,
+				DA4BA15999CE7D8721AF3A8864E496E7 /* QRCodeReader.swift-dummy.m */,
+				99251CA11B5646FD5910B8315F1978D1 /* QRCodeReader.swift-prefix.pch */,
+				9E22DD59E3B196604A594A6E76F7F223 /* QRCodeReader.swift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/QRCodeReader.swift";
+			sourceTree = "<group>";
+		};
+		2B047F978A7A38F82686B423D3E8981D /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				948545A07DF9EB5351DAE9D00E1D0321 /* Pods-cameraLocation */,
+				BE7F427FB6DF21981827A03EF658EF51 /* Pods-cameraLocationTests */,
+				613FC7A6E3A022F40716A3D65BDD7D2F /* Pods-cameraLocationUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB9C43F4BAD2992BD9EE60E0C1AC390B /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		457D5778C8CB0353B2F316623D33D29A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CDB6E230588B897266CB7DF0585CAF5A /* Pods_cameraLocation.framework */,
+				33CABC33ECA391D7B1EF0E1385BDA1A7 /* Pods_cameraLocationTests.framework */,
+				2399868567F280468073BAABDA621733 /* Pods_cameraLocationUITests.framework */,
+				8B63EA79F8483E5D86A835CE96C560EB /* QRCodeReader.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		613FC7A6E3A022F40716A3D65BDD7D2F /* Pods-cameraLocationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				42FEB601CE7EE366BDD8CFF3AB6ADA97 /* Info.plist */,
+				4A8B5F7A4766B070669FBB7B4E767064 /* Pods-cameraLocationUITests.modulemap */,
+				253F1183D8C8F892CF60B5FDCAAA5792 /* Pods-cameraLocationUITests-acknowledgements.markdown */,
+				F5BC9D3FF89ECD3D5979F9C0C423691D /* Pods-cameraLocationUITests-acknowledgements.plist */,
+				B9ED6DED13A09319716A3B6817F92C1B /* Pods-cameraLocationUITests-dummy.m */,
+				8C5BCBAC8DB459E98351EF90E8985F35 /* Pods-cameraLocationUITests-frameworks.sh */,
+				942F240931B85500908B11AEC8F88EEA /* Pods-cameraLocationUITests-resources.sh */,
+				6322E02325CD493765D5908DF46BC978 /* Pods-cameraLocationUITests-umbrella.h */,
+				5B14F39C2F556395669220242F8E4FB8 /* Pods-cameraLocationUITests.debug.xcconfig */,
+				A122C31490425CC0C9E5B9E7ACC49EED /* Pods-cameraLocationUITests.release.xcconfig */,
+			);
+			name = "Pods-cameraLocationUITests";
+			path = "Target Support Files/Pods-cameraLocationUITests";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				0064BB3FC21AF574E593EE779CC48429 /* Pods */,
+				457D5778C8CB0353B2F316623D33D29A /* Products */,
+				2B047F978A7A38F82686B423D3E8981D /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		948545A07DF9EB5351DAE9D00E1D0321 /* Pods-cameraLocation */ = {
+			isa = PBXGroup;
+			children = (
+				1FB4347828B2841EBB320309DA67456D /* Info.plist */,
+				3F082A0E5E2AAB8B22B1F2A42B98D76F /* Pods-cameraLocation.modulemap */,
+				1FD408C4DE48EF486D1B74026A1357B3 /* Pods-cameraLocation-acknowledgements.markdown */,
+				C924E6E872C367EA257F8B8C3215B5EF /* Pods-cameraLocation-acknowledgements.plist */,
+				8DF08E7E189FAA9EAE1DB3EB9E864BE1 /* Pods-cameraLocation-dummy.m */,
+				46FC94B3F79E0B47D00ED8DCA58C488B /* Pods-cameraLocation-frameworks.sh */,
+				775198421FFB73336099D0D4B328609F /* Pods-cameraLocation-resources.sh */,
+				C59C989218E090B5E2C4E36B59F2D013 /* Pods-cameraLocation-umbrella.h */,
+				FD43D1F32B24E20F0F28DE2F94B6D69E /* Pods-cameraLocation.debug.xcconfig */,
+				3445DBDA9B165FE499C51FD0F07E4B91 /* Pods-cameraLocation.release.xcconfig */,
+			);
+			name = "Pods-cameraLocation";
+			path = "Target Support Files/Pods-cameraLocation";
+			sourceTree = "<group>";
+		};
+		A958ABA0FBE63EBD0BEF860CD122D213 /* QRCodeReader.swift */ = {
+			isa = PBXGroup;
+			children = (
+				24A6BF43DC606A4EC7D6B96C6B73A467 /* QRCodeReader.swift */,
+				997F2006A4635CF96F9927726CA541A5 /* QRCodeReaderResult.swift */,
+				C48D837D4B84D940A1740E66CA79BD34 /* QRCodeReaderView.swift */,
+				6ACC8171D6255279BF12A8BB7D88EB3D /* QRCodeReaderViewContainer.swift */,
+				0BB9EDE86BE20180C30E5290B18A9A85 /* QRCodeReaderViewController.swift */,
+				F4E9952CA8B7B2098C4B3E3D6D6EBF94 /* QRCodeReaderViewControllerBuilder.swift */,
+				E583598A1CD746109A6D9D6B58C6ACA6 /* QRCodeReaderViewControllerDelegate.swift */,
+				ACB8036F7EA41F8974814D486A983AD0 /* ReaderOverlayView.swift */,
+				B0790DDDBBDD3828C068594029B4CC68 /* SwitchCameraButton.swift */,
+				450BF8EC95275AC1EA704C812F320368 /* ToggleTorchButton.swift */,
+				1D6225892D9832DE824DE130C11F797D /* Support Files */,
+			);
+			name = QRCodeReader.swift;
+			path = QRCodeReader.swift;
+			sourceTree = "<group>";
+		};
+		AB9C43F4BAD2992BD9EE60E0C1AC390B /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				840966EAD0718963750ABB9F4A6EB218 /* AVFoundation.framework */,
+				2828B7422B8C5C7BC4BF9C20A6D7B397 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		BE7F427FB6DF21981827A03EF658EF51 /* Pods-cameraLocationTests */ = {
+			isa = PBXGroup;
+			children = (
+				A67C7A648372E1398F7C22BA38D2C966 /* Info.plist */,
+				6A2310BB4419DDBA6A1121501EC8732A /* Pods-cameraLocationTests.modulemap */,
+				B64A56981C5D10BAD4F99FA2471D7777 /* Pods-cameraLocationTests-acknowledgements.markdown */,
+				747B9881145AD8CB6057B21A0EE3D557 /* Pods-cameraLocationTests-acknowledgements.plist */,
+				BDBDAA4EBF19D201EAA38F66A2983468 /* Pods-cameraLocationTests-dummy.m */,
+				610379E1D6C4FA2401A19A6BEBFE8BBA /* Pods-cameraLocationTests-frameworks.sh */,
+				5E243D605ED6CB1728A71E2E52A4785F /* Pods-cameraLocationTests-resources.sh */,
+				88DCFDB95CE66835336C2144F57B4AAB /* Pods-cameraLocationTests-umbrella.h */,
+				0B7A16F3715409C3A6426546A72DB01D /* Pods-cameraLocationTests.debug.xcconfig */,
+				C167D55FEDECC7605538A69ED7E93A4D /* Pods-cameraLocationTests.release.xcconfig */,
+			);
+			name = "Pods-cameraLocationTests";
+			path = "Target Support Files/Pods-cameraLocationTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		39693F5ED7DADDAFAFAE252D438C979E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				607819C3A4A5E7DCBBB6324168732FB9 /* Pods-cameraLocationTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57578FA4FAE19FAAB197D246E8EFF105 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6008C7DFEB6F4100BED1B68282E4375A /* Pods-cameraLocationUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC9A130F1B9569DE570A6673BCE1A299 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C6A694BA361159AA8992EAD038DC298 /* QRCodeReader.swift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF93F25C4285813168EEE9DA301C7087 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49DD1D090CC595D44AF6BC5892CF193A /* Pods-cameraLocation-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		26DDD291C4D389C53FF87690E8B847D4 /* Pods-cameraLocation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 783CA9CD4346AC859FFB0EA054DA1E70 /* Build configuration list for PBXNativeTarget "Pods-cameraLocation" */;
+			buildPhases = (
+				3A18648E102F60291017A8607AB5C0B0 /* Sources */,
+				458F24FFC177D37B1A9A37CB400E4EB2 /* Frameworks */,
+				CF93F25C4285813168EEE9DA301C7087 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C15A0899CA4AFE72BF28AE049AF575C0 /* PBXTargetDependency */,
+			);
+			name = "Pods-cameraLocation";
+			productName = "Pods-cameraLocation";
+			productReference = CDB6E230588B897266CB7DF0585CAF5A /* Pods_cameraLocation.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A753E2FE9DD5151CB533F464934BA2FD /* QRCodeReader.swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5294523E439DB81F84B8D993917E61F2 /* Build configuration list for PBXNativeTarget "QRCodeReader.swift" */;
+			buildPhases = (
+				287F18DFA5C4B684CE16260A1FEEE4EB /* Sources */,
+				B8F4A89BD6BB31FCAE07A4710100AB35 /* Frameworks */,
+				BC9A130F1B9569DE570A6673BCE1A299 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QRCodeReader.swift;
+			productName = QRCodeReader.swift;
+			productReference = 8B63EA79F8483E5D86A835CE96C560EB /* QRCodeReader.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B74282D486FA4BDC4B56D992618FDDB5 /* Pods-cameraLocationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01BC282819FE9EA1F1B7EA126E829331 /* Build configuration list for PBXNativeTarget "Pods-cameraLocationTests" */;
+			buildPhases = (
+				327EA4EEA91E6726C1832C11A12FF925 /* Sources */,
+				B7F185814ACB4419303AB25588F8FA2D /* Frameworks */,
+				39693F5ED7DADDAFAFAE252D438C979E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-cameraLocationTests";
+			productName = "Pods-cameraLocationTests";
+			productReference = 33CABC33ECA391D7B1EF0E1385BDA1A7 /* Pods_cameraLocationTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BD560E04CB6F4F14ECAA91BD3F86DADD /* Pods-cameraLocationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7F8D37D97540E87FD73D950EFD60321 /* Build configuration list for PBXNativeTarget "Pods-cameraLocationUITests" */;
+			buildPhases = (
+				6B41478F7DFFE947B5635E55DE0DBDFE /* Sources */,
+				98767B2813D4F7A0C33873EE41676D2A /* Frameworks */,
+				57578FA4FAE19FAAB197D246E8EFF105 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-cameraLocationUITests";
+			productName = "Pods-cameraLocationUITests";
+			productReference = 2399868567F280468073BAABDA621733 /* Pods_cameraLocationUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 457D5778C8CB0353B2F316623D33D29A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				26DDD291C4D389C53FF87690E8B847D4 /* Pods-cameraLocation */,
+				B74282D486FA4BDC4B56D992618FDDB5 /* Pods-cameraLocationTests */,
+				BD560E04CB6F4F14ECAA91BD3F86DADD /* Pods-cameraLocationUITests */,
+				A753E2FE9DD5151CB533F464934BA2FD /* QRCodeReader.swift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		287F18DFA5C4B684CE16260A1FEEE4EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D6AD7FC179C474736A457704558993F /* QRCodeReader.swift in Sources */,
+				F5A85FC19759C904BFE1219479AFF204 /* QRCodeReader.swift-dummy.m in Sources */,
+				96F7EEEA28D000841C7C0135382EC0BF /* QRCodeReaderResult.swift in Sources */,
+				DD92AEE5828FB93DBCBA8E7DDC92B436 /* QRCodeReaderView.swift in Sources */,
+				0D7E3570AF271933553776EF32A7DEC0 /* QRCodeReaderViewContainer.swift in Sources */,
+				F59F42CDFFF79070BD73297EC5F84E60 /* QRCodeReaderViewController.swift in Sources */,
+				CD100304AE93731D6301B1E89A26D9A8 /* QRCodeReaderViewControllerBuilder.swift in Sources */,
+				CCBEBEB0C4DB987A9392F652EF2792AB /* QRCodeReaderViewControllerDelegate.swift in Sources */,
+				C031B9F1B4524E130DC5121CCFBD36BD /* ReaderOverlayView.swift in Sources */,
+				9C634137F9AB67F4802FC1764DEA4BC5 /* SwitchCameraButton.swift in Sources */,
+				BE50F5F95029D8E41E45F6139728453E /* ToggleTorchButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		327EA4EEA91E6726C1832C11A12FF925 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4490D28FEB531F292E1A6FAA911FCA17 /* Pods-cameraLocationTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A18648E102F60291017A8607AB5C0B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B6A413A6B3590A90C43403E3E7A40A6 /* Pods-cameraLocation-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B41478F7DFFE947B5635E55DE0DBDFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F814FF8BD9CFF0B9BC8FB2F30F29DB65 /* Pods-cameraLocationUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C15A0899CA4AFE72BF28AE049AF575C0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = QRCodeReader.swift;
+			target = A753E2FE9DD5151CB533F464934BA2FD /* QRCodeReader.swift */;
+			targetProxy = 737364446210B7F3D88D33C4BDCB8913 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		08B67C1C821BBE199769D9B9F1A2DB57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3445DBDA9B165FE499C51FD0F07E4B91 /* Pods-cameraLocation.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-cameraLocation/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-cameraLocation/Pods-cameraLocation.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_cameraLocation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		163D87BE96A63549B0EACF1CC31A2E90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		1C5C6F6AE7402431DB81D7E315455E94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A122C31490425CC0C9E5B9E7ACC49EED /* Pods-cameraLocationUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-cameraLocationUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-cameraLocationUITests/Pods-cameraLocationUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_cameraLocationUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2012D75BE41C23D75C098204483B0300 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81ED2746A70E1255248E699111596F0F /* QRCodeReader.swift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/QRCodeReader.swift/QRCodeReader.swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/QRCodeReader.swift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/QRCodeReader.swift/QRCodeReader.swift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = QRCodeReader;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4A8DAEC4E2078C7C3C5578924EE2FA3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B7A16F3715409C3A6426546A72DB01D /* Pods-cameraLocationTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-cameraLocationTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-cameraLocationTests/Pods-cameraLocationTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_cameraLocationTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		707B86CFB21B645E37109F39754D4051 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8B2E9450E26BB128EA0B8EF7B6F29125 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81ED2746A70E1255248E699111596F0F /* QRCodeReader.swift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/QRCodeReader.swift/QRCodeReader.swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/QRCodeReader.swift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/QRCodeReader.swift/QRCodeReader.swift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = QRCodeReader;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AD3F60C5CF3CF5EBCE3F4D80845C73B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B14F39C2F556395669220242F8E4FB8 /* Pods-cameraLocationUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-cameraLocationUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-cameraLocationUITests/Pods-cameraLocationUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_cameraLocationUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D4BD3E8D1BC3BEC9E751342E49164FCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD43D1F32B24E20F0F28DE2F94B6D69E /* Pods-cameraLocation.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-cameraLocation/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-cameraLocation/Pods-cameraLocation.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_cameraLocation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E97364528A7A58B951280AD78DC11BDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C167D55FEDECC7605538A69ED7E93A4D /* Pods-cameraLocationTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-cameraLocationTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-cameraLocationTests/Pods-cameraLocationTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_cameraLocationTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		01BC282819FE9EA1F1B7EA126E829331 /* Build configuration list for PBXNativeTarget "Pods-cameraLocationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A8DAEC4E2078C7C3C5578924EE2FA3B /* Debug */,
+				E97364528A7A58B951280AD78DC11BDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				163D87BE96A63549B0EACF1CC31A2E90 /* Debug */,
+				707B86CFB21B645E37109F39754D4051 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5294523E439DB81F84B8D993917E61F2 /* Build configuration list for PBXNativeTarget "QRCodeReader.swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2012D75BE41C23D75C098204483B0300 /* Debug */,
+				8B2E9450E26BB128EA0B8EF7B6F29125 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		783CA9CD4346AC859FFB0EA054DA1E70 /* Build configuration list for PBXNativeTarget "Pods-cameraLocation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4BD3E8D1BC3BEC9E751342E49164FCF /* Debug */,
+				08B67C1C821BBE199769D9B9F1A2DB57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7F8D37D97540E87FD73D950EFD60321 /* Build configuration list for PBXNativeTarget "Pods-cameraLocationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD3F60C5CF3CF5EBCE3F4D80845C73B2 /* Debug */,
+				1C5C6F6AE7402431DB81D7E315455E94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
