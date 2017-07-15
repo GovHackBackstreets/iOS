@@ -89,10 +89,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/MMSegmentSlider/MMSegmentSlider.framework"
   install_framework "$BUILT_PRODUCTS_DIR/QRCodeReader.swift/QRCodeReader.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/MMSegmentSlider/MMSegmentSlider.framework"
   install_framework "$BUILT_PRODUCTS_DIR/QRCodeReader.swift/QRCodeReader.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework"
 fi

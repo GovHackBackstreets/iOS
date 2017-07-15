@@ -29,6 +29,8 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var storeNameString: SkyFloatingLabelTextField!
     @IBOutlet weak var popUpView: designView!
     @IBOutlet weak var upload: UIButton!
+    
+    @IBOutlet weak var labelEx: UILabel!
 
     let apiPost = PostApi()
 
@@ -38,6 +40,7 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
         self.popUpView.layer.cornerRadius = 15.0
         super.viewDidLoad()
         setup()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
         
     }
     
@@ -63,23 +66,39 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
         storeLabel.selectedLineColor = genericColor
         storeLabel.selectedTitleColor = genericColor
         storeLabel.tintColor = genericColor
+        self.storeNameString = storeLabel
         self.popUpView.addSubview(storeLabel)
         
         storeLabel.centerXAnchor.constraint(equalTo: popUpView.layoutMarginsGuide.centerXAnchor, constant: 0).isActive = true
-        storeLabel.centerYAnchor.constraint(equalTo: popUpView.layoutMarginsGuide.centerYAnchor, constant: -30).isActive = true
+        storeLabel.topAnchor.constraint(equalTo: popUpView.layoutMarginsGuide.topAnchor, constant: 10).isActive = true
         storeLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
         storeLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         upload.centerXAnchor.constraint(equalTo: popUpView.layoutMarginsGuide.centerXAnchor, constant: 0).isActive = true
-        upload.centerYAnchor.constraint(equalTo: popUpView.layoutMarginsGuide.centerYAnchor, constant: 30).isActive = true
+        upload.bottomAnchor.constraint(equalTo: popUpView.layoutMarginsGuide.bottomAnchor, constant: 0).isActive = true
         upload.widthAnchor.constraint(equalToConstant: 40).isActive = true
         upload.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
 
     }
     
+    func keyboardWillShow(notification: NSNotification) {
+        if ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= 50
+            }
+        }
+    }
+    
+    func keyboardWillhide(notification: NSNotification) {
+        if ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += 50
+            }
+        }
+    }
+    
     @IBAction func setToApiClass(_ sender: UIButton) {
-        
         if sender.tag == 1 {
             
             let suppplier = self.storeNameString.text
@@ -99,6 +118,8 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
         let dictionary: [String: Any] = [
             "location": ["lat": "\(latitude)", "long": "\(longitude)"],
             "supplier": supplier,
+            "rating": 1.3,
+            
         ]
         
         return dictionary

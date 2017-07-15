@@ -18,7 +18,7 @@ class PostApi {
     
         let session4 = URLSession.shared
         let request = NSMutableURLRequest(url: url)
-        request.httpMethod = "POST"
+        request.httpMethod = "PUT"
         request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
         
         do {

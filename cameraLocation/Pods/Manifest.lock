@@ -1,15 +1,18 @@
 PODS:
+  - MMSegmentSlider (1.0.3)
   - QRCodeReader.swift (7.4.1)
   - SkyFloatingLabelTextField (3.1.0)
 
 DEPENDENCIES:
+  - MMSegmentSlider
   - QRCodeReader.swift
   - SkyFloatingLabelTextField
 
 SPEC CHECKSUMS:
+  MMSegmentSlider: 6838bc2c8be562400d640f19271c21e311fa2e86
   QRCodeReader.swift: 39b149584852b7b721012126d38a14024b851366
   SkyFloatingLabelTextField: 26a92ad407044dd5a7c3e4e348738ff0991514fe
 
-PODFILE CHECKSUM: f7dbfe5bc7c89d57d73f0d7a55e9b4528f4e59f4
+PODFILE CHECKSUM: 70e9c516700fa0c42ddeca104a8ad4556d22df97
 
 COCOAPODS: 1.2.1

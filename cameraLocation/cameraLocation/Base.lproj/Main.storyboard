@@ -44,7 +44,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ww-Id-340" customClass="designView" customModule="cameraLocation" customModuleProvider="target">
-                                <rect key="frame" x="52" y="47" width="265" height="308"/>
+                                <rect key="frame" x="52" y="47" width="270" height="404"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.40175051594617917" green="0.35579294725073307" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <userDefinedRuntimeAttributes>
@@ -56,9 +56,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="3ww-Id-340" secondAttribute="trailing" constant="42" id="7pv-XL-pcC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3ww-Id-340" secondAttribute="trailing" constant="37" id="7pv-XL-pcC"/>
                             <constraint firstItem="3ww-Id-340" firstAttribute="top" secondItem="5KK-Ca-Td4" secondAttribute="bottom" constant="27" id="D9x-Dh-Lrn"/>
-                            <constraint firstItem="jkm-1T-VZX" firstAttribute="top" secondItem="3ww-Id-340" secondAttribute="bottom" constant="312" id="Yvl-um-q9p"/>
+                            <constraint firstItem="jkm-1T-VZX" firstAttribute="top" secondItem="3ww-Id-340" secondAttribute="bottom" constant="216" id="Yvl-um-q9p"/>
                             <constraint firstItem="3ww-Id-340" firstAttribute="leading" secondItem="eYl-fi-clb" secondAttribute="leadingMargin" constant="36" id="dzV-VA-vRA"/>
                         </constraints>
                     </view>
