@@ -14,6 +14,7 @@
 		44D10A231F1A55610014E6AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44D10A211F1A55610014E6AA /* LaunchScreen.storyboard */; };
 		44D10A2E1F1A55620014E6AA /* cameraLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D10A2D1F1A55620014E6AA /* cameraLocationTests.swift */; };
 		44D10A391F1A55620014E6AA /* cameraLocationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D10A381F1A55620014E6AA /* cameraLocationUITests.swift */; };
+		44D10A471F1A79690014E6AA /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D10A461F1A79690014E6AA /* PopUpViewController.swift */; };
 		74578DE6A8C3A1A9586432D8 /* Pods_cameraLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E0EBB90701DAE66EE57D950 /* Pods_cameraLocation.framework */; };
 		96AFD5FDFC42AAE232F1BB6C /* Pods_cameraLocationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6823261A4581A7F62B018FC /* Pods_cameraLocationUITests.framework */; };
 		C97119E3C0F285AC3E19BCCA /* Pods_cameraLocationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C15E08F0EB168730C2670B /* Pods_cameraLocationTests.framework */; };
@@ -54,6 +55,7 @@
 		44D10A341F1A55620014E6AA /* cameraLocationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cameraLocationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D10A381F1A55620014E6AA /* cameraLocationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cameraLocationUITests.swift; sourceTree = "<group>"; };
 		44D10A3A1F1A55620014E6AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44D10A461F1A79690014E6AA /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		694FC17ACC9F1DFCFBFBE839 /* Pods-cameraLocationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cameraLocationUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cameraLocationUITests/Pods-cameraLocationUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6E02A5BE4F08ABC4C25C9C3F /* Pods-cameraLocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cameraLocation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cameraLocation/Pods-cameraLocation.debug.xcconfig"; sourceTree = "<group>"; };
 		930983BCC0248B8F08FD5471 /* Pods-cameraLocationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cameraLocationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cameraLocationTests/Pods-cameraLocationTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			children = (
 				44D10A181F1A55610014E6AA /* AppDelegate.swift */,
 				44D10A1A1F1A55610014E6AA /* ViewController.swift */,
+				44D10A461F1A79690014E6AA /* PopUpViewController.swift */,
 				44D10A1C1F1A55610014E6AA /* Main.storyboard */,
 				44D10A1F1F1A55610014E6AA /* Assets.xcassets */,
 				44D10A211F1A55610014E6AA /* LaunchScreen.storyboard */,
@@ -450,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44D10A1B1F1A55610014E6AA /* ViewController.swift in Sources */,
+				44D10A471F1A79690014E6AA /* PopUpViewController.swift in Sources */,
 				44D10A191F1A55610014E6AA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

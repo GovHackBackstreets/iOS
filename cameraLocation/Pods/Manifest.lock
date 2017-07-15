@@ -1,12 +1,15 @@
 PODS:
   - QRCodeReader.swift (7.4.1)
+  - SkyFloatingLabelTextField (3.1.0)
 
 DEPENDENCIES:
   - QRCodeReader.swift
+  - SkyFloatingLabelTextField
 
 SPEC CHECKSUMS:
   QRCodeReader.swift: 39b149584852b7b721012126d38a14024b851366
+  SkyFloatingLabelTextField: 26a92ad407044dd5a7c3e4e348738ff0991514fe
 
-PODFILE CHECKSUM: 1f20a3748734fb0da05f1ccb1c57b5752f18ff50
+PODFILE CHECKSUM: f7dbfe5bc7c89d57d73f0d7a55e9b4528f4e59f4
 
 COCOAPODS: 1.2.1

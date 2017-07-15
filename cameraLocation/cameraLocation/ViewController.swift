@@ -2,25 +2,30 @@ import UIKit
 import AVFoundation
 import QRCodeReader
 
-class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
+protocol MyCustomCellDelegator {
+    
+    func callSegueFromCell(myData dataobject: String)
+    
+}
 
+class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     
-    @IBOutlet weak var sender: UIButton!
-    
-    
+    @IBOutlet weak var sender2: UIButton!
+    var delegate2: MyCustomCellDelegator?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let sender = UIButton()
-        sender.setTitle("capture", for: .normal)
-        sender.addTarget(self, action:#selector(scanAction(_:)) , for: .touchUpInside)
-        sender.translatesAutoresizingMaskIntoConstraints = false
-        sender.setTitleColor(UIColor.blue, for: .normal)
-        self.sender = sender
-        self.view.addSubview(sender)
+        let send = UIButton()
+        send.setTitle("capture", for: .normal)
+        send.addTarget(self, action:#selector(scanAction(_:)) , for: .touchUpInside)
+        send.translatesAutoresizingMaskIntoConstraints = false
+        send.setTitleColor(UIColor.blue, for: .normal)
+        self.sender2 = send
+        self.view.addSubview(send)
         
-        sender.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -100).isActive = true
-        sender.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor, constant: 0).isActive = true
+        send.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -100).isActive = true
+        send.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor, constant: 0).isActive = true
         
         
     }
@@ -39,22 +44,36 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
         readerVC.completionBlock = { (result: QRCodeReaderResult?) in
             print(result!)
         }
-        
-        // Presents the readerVC as modal form sheet
+
         readerVC.modalPresentationStyle = .formSheet
         present(readerVC, animated: true, completion: nil)
     }
-
-    // MARK: - QRCodeReaderViewController Delegate Methods
-
+    
     func reader(_ reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
         reader.stopScanning()
+        let valuefromqr = result.value
+        print(valuefromqr)
         
         dismiss(animated: true, completion: nil)
-    }
+        
+        self.performSegue(withIdentifier: "toPopUp", sender: valuefromqr)
 
-    //This is an optional delegate method, that allows you to be notified when the user switches the cameraName
-    //By pressing on the switch camera button
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if sender != nil {
+            
+            let destinationView: PopUpViewController = segue.destination as! PopUpViewController
+            destinationView.stringFromGR = (sender as? String)!
+            
+        } else {
+            print("stuff")
+        }
+    }
+    
+    
+
     func reader(_ reader: QRCodeReaderViewController, didSwitchCamera newCaptureDevice: AVCaptureDeviceInput) {
         if let cameraName = newCaptureDevice.device.localizedName {
             print("Switching capturing to: \(cameraName)")
@@ -64,7 +83,10 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     func readerDidCancel(_ reader: QRCodeReaderViewController) {
         reader.stopScanning()
         
-        dismiss(animated: true, completion: nil)
+        
+        self.dismiss(animated: true, completion: nil)
     }
+    
+    
 
 }

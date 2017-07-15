@@ -7,6 +7,7 @@ target 'cameraLocation' do
 
   # Pods for cameraLocation
   pod ‘QRCodeReader.swift'
+  pod ‘SkyFloatingLabelTextField’
 
   target 'cameraLocationTests' do
     inherit! :search_paths
