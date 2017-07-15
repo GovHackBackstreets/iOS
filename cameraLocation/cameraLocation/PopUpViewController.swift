@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import SkyFloatingLabelTextField
 
 class PopUpViewController: UIViewController {
+    
     
     var stringFromGR = String()
 
@@ -26,7 +28,5 @@ class PopUpViewController: UIViewController {
         
         
     }
- 
-    
 
 }
