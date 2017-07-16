@@ -13,10 +13,10 @@ import MapKit
 
 class location {
     
-    var latitude: String?
-    var longitude: String?
+    var latitude: Double?
+    var longitude: Double?
     
-    init(lat: String, long: String) {
+    init(lat: Double, long: Double) {
         self.longitude = long
         self.latitude = lat
     }
@@ -179,7 +179,7 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
         if sender.tag == 1 {
             
             let suppplier = self.storeNameString.text
-            let locate = location(lat: "51.1111", long: "-0.12121")
+            let locate = location(lat: 51.1111, long: -0.12121)
             createDictionary(location: locate, supplier: suppplier!)
             
 
@@ -204,7 +204,7 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
         let temp = Double(forLabel4.text!)
 
         let dict: [String: Any] = [
-            "location": ["lat": "\(latitude)", "long": "\(longitude)"],
+            "location": ["lat": latitude, "long": longitude],
             "supplier": supplier,
             "facilityName": "bigfactory",
             "physicalQuality": physical!,
@@ -220,7 +220,7 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
             
         apiPost.post(parameters: dictionaryN, id: self.stringFromGR)
         
-        
+        self.dismiss(animated: true, completion: nil)
 
     }
 
