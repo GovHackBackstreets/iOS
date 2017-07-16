@@ -134,6 +134,15 @@ class ViewController: UIViewController {
         locationTracker.requestForAuthorization()
         locationTracker.startLocationTracking()
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let controller = segue.destination as? PopUpViewController,
+            let currentLocation = locationTracker.currentLocation else {
+            return
+        }
+        controller.dataPoint = DataPoint(lat: currentLocation.coordinate.latitude,
+                                         long: currentLocation.coordinate.longitude)
+    }
 }
 
 extension ViewController {
@@ -152,6 +161,10 @@ extension ViewController {
         controller.delegate = self
         controller.startScanning()
         present(controller, animated: true, completion: nil)
+    }
+
+    @objc fileprivate func createNewStep() {
+        performSegue(withIdentifier: "toPopUp", sender: nil)
     }
 }
 
@@ -205,7 +218,7 @@ extension ViewController {
         buttonScan.addTarget(self, action: #selector(scanQrCode), for: .touchUpInside)
         buttonScan.layer.cornerRadius = 25
         buttonStep.imageViewTop.image = UIImage(named: "add-step")
-        buttonStep.addTarget(self, action: #selector(scanQrCode), for: .touchUpInside)
+        buttonStep.addTarget(self, action: #selector(createNewStep), for: .touchUpInside)
         buttonStep.layer.cornerRadius = 25
         idView.id = nil
         titleLabel.textColor = UIColor.black
