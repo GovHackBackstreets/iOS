@@ -10,8 +10,7 @@
 #endif
 #endif
 
-#import "MMSegmentSlider.h"
 
-FOUNDATION_EXPORT double MMSegmentSliderVersionNumber;
-FOUNDATION_EXPORT const unsigned char MMSegmentSliderVersionString[];
+FOUNDATION_EXPORT double SnapKitVersionNumber;
+FOUNDATION_EXPORT const unsigned char SnapKitVersionString[];
 

@@ -223,19 +223,4 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
         self.dismiss(animated: true, completion: nil)
 
     }
-
-    
-    
-    
- 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
 }

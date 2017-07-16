@@ -6,8 +6,9 @@ target 'cameraLocation' do
   use_frameworks!
 
   # Pods for cameraLocation
-  pod ‘QRCodeReader.swift'
-  pod ‘SkyFloatingLabelTextField’
+  pod 'QRCodeReader.swift'
+  pod 'SkyFloatingLabelTextField'
+  pod 'SnapKit'
 
   target 'cameraLocationTests' do
     inherit! :search_paths
