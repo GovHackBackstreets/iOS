@@ -153,6 +153,13 @@ class ViewController: UIViewController {
         controller.dataPoint = DataPoint(lat: currentLocation.coordinate.latitude,
                                          long: currentLocation.coordinate.longitude)
         controller.stringFromGR = id ?? ""
+        controller.completionRequest = { [weak self] _ in
+            controller.dismiss(animated: true, completion: nil)
+            if let id = self?.id {
+                self?.realoadData(id: id)
+                controller.dismiss(animated: true, completion: nil)
+            }
+        }
     }
 
     fileprivate func realoadData(id: String) {

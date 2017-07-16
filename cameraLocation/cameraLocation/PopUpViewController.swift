@@ -15,6 +15,7 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
 
     var dataPoint: DataPoint!
     var stringFromGR: String!
+    var completionRequest: ((FinishedTask) -> Void)!
     @IBOutlet weak var storeNameString: SkyFloatingLabelTextField!
     @IBOutlet weak var popUpView: designView!
     @IBOutlet weak var upload: UIButton!
@@ -208,9 +209,6 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
             
         self.dictionaryN = dict
             
-        apiPost.post(parameters: dictionaryN, id: self.stringFromGR)
-        
-        self.dismiss(animated: true, completion: nil)
-
+        apiPost.post(parameters: dictionaryN, id: self.stringFromGR, closure: self.completionRequest)
     }
 }
