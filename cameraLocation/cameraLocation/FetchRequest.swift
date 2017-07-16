@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FetchMe {
+class DataStep {
     
     let latitude: Double
     let longitude: Double
@@ -42,13 +42,12 @@ class LoadingData {
     
     var refhandle: UInt = 0
     let articles: [[String: String]] = []
-    let id = String()
     
-    func theDispatchQueue(closure: @escaping ([FetchMe]) -> Void) {
+    func fetch(id :String, closure: @escaping ([DataStep]) -> Void) {
         
-        var foodArray: [FetchMe] = []
+        var foodArray: [DataStep] = []
         
-        var request = URLRequest(url: URL(string: "https://govhacksapi.herokuapp.com/scan/1")!)
+        var request = URLRequest(url: URL(string: "https://govhacksapi.herokuapp.com/scan/\(id)")!)
         request.httpMethod = "GET"
         let session = URLSession.shared
         
@@ -64,11 +63,8 @@ class LoadingData {
                     let stamps = json["stamps"] as? [[String: Any]] ?? [[:]]
                     
                     for i in stamps {
-    
-                        print(i)
-                        let remiData = FetchMe(json: i)
+                        let remiData = DataStep(json: i)
                         foodArray.append(remiData)
-
                     }
                     
                     DispatchQueue.main.async {
@@ -84,38 +80,5 @@ class LoadingData {
                 }
             
             }.resume()
-    
-        
     }
-    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

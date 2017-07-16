@@ -14,7 +14,7 @@ import MapKit
 class PopUpViewController: UIViewController, UITextFieldDelegate {
 
     var dataPoint: DataPoint!
-    var stringFromGR = String()
+    var stringFromGR: String!
     @IBOutlet weak var storeNameString: SkyFloatingLabelTextField!
     @IBOutlet weak var popUpView: designView!
     @IBOutlet weak var upload: UIButton!

@@ -16,12 +16,12 @@ struct DataPoint {
     let long: Double
 }
 
-let locations = [
-    DataPoint(lat: 47.4771, long: -0.7893),
-    DataPoint(lat: 48.9666, long: 1.6996),
-    DataPoint(lat: 47.3524, long: 4.6304),
-    DataPoint(lat: 49.9104, long: 9.8947)
-]
+//let locations = [
+//    DataPoint(lat: 47.4771, long: -0.7893),
+//    DataPoint(lat: 48.9666, long: 1.6996),
+//    DataPoint(lat: 47.3524, long: 4.6304),
+//    DataPoint(lat: 49.9104, long: 9.8947)
+//]
 
 internal final class IdView: UIView {
     private let label = UILabel(frame: CGRect.zero)
@@ -114,10 +114,20 @@ class ViewController: UIViewController {
     fileprivate let buttonStep = BlurButton(frame: CGRect.zero)
     fileprivate let titleLabel = UILabel(frame: CGRect.zero)
     fileprivate let idView = IdView(id: nil)
+    fileprivate let fetchRequest = LoadingData()
+    fileprivate var datas: [DataStep] = [] {
+        didSet {
+            mapView.resetMap()
+            mapView.setNewPoints(points: datas)
+        }
+    }
     fileprivate var id: String? {
         didSet {
             idView.id = id
             buttonStep.isHidden = id == nil ? true : false
+            if let idProduct = id {
+                self.realoadData(id: idProduct)
+            }
         }
     }
 
@@ -142,6 +152,13 @@ class ViewController: UIViewController {
         }
         controller.dataPoint = DataPoint(lat: currentLocation.coordinate.latitude,
                                          long: currentLocation.coordinate.longitude)
+        controller.stringFromGR = id ?? ""
+    }
+
+    fileprivate func realoadData(id: String) {
+        fetchRequest.fetch(id: id, closure: { [weak self] datas in
+            self?.datas = datas
+        })
     }
 }
 
@@ -210,7 +227,6 @@ extension ViewController {
     }
 
     fileprivate func setupViews() {
-        mapView.setNewPoints(points: locations)
         buttonPosition.imageViewTop.image = UIImage(named: "position")
         buttonPosition.addTarget(self, action: #selector(resetPosition), for: .touchUpInside)
         buttonPosition.layer.cornerRadius = 35

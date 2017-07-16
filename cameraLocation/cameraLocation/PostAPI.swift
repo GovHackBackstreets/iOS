@@ -11,7 +11,7 @@ import Foundation
 class PostApi {
     
     func post(parameters: [String: Any], id: String) {
-        let urlToRequest = "https://requestb.in/tu1tyitu"
+        let urlToRequest = "https://govhacksapi.herokuapp.com/scan/\(id)"
         let header = [
             "content-type": "application/json",
         ]
@@ -47,37 +47,3 @@ class PostApi {
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
