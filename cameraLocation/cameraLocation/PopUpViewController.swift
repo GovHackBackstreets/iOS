@@ -43,6 +43,8 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var labelEx: UILabel!
 
     let apiPost = PostApi()
+    
+    var dictionaryN: [String: Any] = [:]
 
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor.clear
@@ -114,7 +116,7 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
         storeLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         upload.centerXAnchor.constraint(equalTo: popUpView.layoutMarginsGuide.centerXAnchor, constant: 0).isActive = true
-        upload.bottomAnchor.constraint(equalTo: popUpView.layoutMarginsGuide.bottomAnchor, constant: 10).isActive = true
+        upload.bottomAnchor.constraint(equalTo: popUpView.layoutMarginsGuide.bottomAnchor, constant: -5).isActive = true
         upload.widthAnchor.constraint(equalToConstant: 60).isActive = true
         upload.heightAnchor.constraint(equalToConstant: 60).isActive = true
     
@@ -178,10 +180,9 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
             
             let suppplier = self.storeNameString.text
             let locate = location(lat: "51.1111", long: "-0.12121")
-            let dict = createDictionary(location: locate, supplier: suppplier!)
+            createDictionary(location: locate, supplier: suppplier!)
             
-            apiPost.post(parameters: dict, id: self.stringFromGR)
-            
+
         }
         
     }
@@ -194,25 +195,32 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    func createDictionary(location: location, supplier: String) -> [String: Any] {
+    func createDictionary(location: location, supplier: String) {
         let latitude = location.latitude!
         let longitude = location.longitude!
-        var dict: [String: Any] = [:]
-        
-        if let physical = Double(label1.text!), let chemical = Double(label2.text!), let microbial = Double(label3.text!), let temp = Double(label4.text!) {
-        
-        dict = [
+        let physical = Double(forLabel1.text!)
+        let chemical = Double(forLabel2.text!)
+        let microbial = Double(forLabel3.text!)
+        let temp = Double(forLabel4.text!)
+
+        let dict: [String: Any] = [
             "location": ["lat": "\(latitude)", "long": "\(longitude)"],
             "supplier": supplier,
-            "rating": 1.3,
-            "physicalQuality": physical,
-            "chemicalContaminents": chemical,
-            "microbialSafety": microbial,
-            "temperatureControl": temp,
+            "facilityName": "bigfactory",
+            "physicalQuality": physical!,
+            "FSA": "govhack",
+            "chemicalContaminents": chemical!,
+            "microbialSafety": microbial!,
+            "temperatureControl": temp!,
         ]
+            
+        print(dict)
+            
+        self.dictionaryN = dict
+            
+        apiPost.post(parameters: dictionaryN, id: self.stringFromGR)
         
-        }
-        return dict
+        
 
     }
 
