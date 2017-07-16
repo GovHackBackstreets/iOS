@@ -21,7 +21,7 @@ class PostApi {
 
     
     func post(parameters: [String: Any], id: String, closure: @escaping(FinishedTask) -> Void) {
-        let urlToRequest = "https://govhacksapi.herokuapp.com/scan/1"
+        let urlToRequest = "https://govhacksapi.herokuapp.com/scan/\(id)"
         let header = [
             "content-type": "application/json",
         ]
@@ -65,37 +65,3 @@ class PostApi {
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

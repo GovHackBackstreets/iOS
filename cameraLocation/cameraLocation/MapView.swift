@@ -87,6 +87,11 @@ internal final class CalloutView: UIView {
     private let labelName = UILabel(frame: CGRect.zero)
     private let stackView: UIStackView
     private let controlViewsFactory = ViewControlDetailFactory()
+    var name: String = "" {
+        didSet {
+            labelName.text = name
+        }
+    }
 
     override init(frame: CGRect) {
         effectView = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
@@ -138,7 +143,6 @@ internal final class CalloutView: UIView {
         labelName.numberOfLines = 0
         labelName.font = UIFont.boldSystemFont(ofSize: 30)
         labelName.textColor = UIColor.black
-        labelName.text = "name"
         stackView.backgroundColor = UIColor.white
         stackView.alignment = .fill
         stackView.distribution = .fillEqually
@@ -207,16 +211,18 @@ internal final class MapAnnotation: NSObject, MKAnnotation {
     let subtitle: String? = nil
     let coordinate: CLLocationCoordinate2D
     let index: Int
+    let point: DataStep
 
-    init(point: DataPoint, index: Int) {
-        coordinate = CLLocationCoordinate2D(latitude: point.lat, longitude: point.long)
+    init(point: DataStep, index: Int) {
+        self.point = point
+        coordinate = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
         self.index = index
         super.init()
     }
 }
 
 final class MapView: MKMapView {
-    fileprivate var points: [DataPoint] = [] {
+    fileprivate var points: [DataStep] = [] {
         didSet {
             resetMap()
             addOverlayPlots()
@@ -238,7 +244,7 @@ final class MapView: MKMapView {
         delegate = self
     }
 
-    func setNewPoints(points: [DataPoint]) {
+    func setNewPoints(points: [DataStep]) {
         self.points = points
     }
 
@@ -255,7 +261,7 @@ extension MapView {
 
     fileprivate func addOverlayPlots() {
         let coordinates = points.map {
-            return CLLocationCoordinate2D(latitude: $0.lat, longitude: $0.long)
+            return CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude)
         }
         let rawPointer = UnsafePointer<CLLocationCoordinate2D>(coordinates)
         let line = MKPolyline(coordinates: rawPointer, count: points.count)
@@ -293,6 +299,7 @@ extension MapView {
 
     fileprivate func setupCalloutView(annotation: MapAnnotation, annotationView: MKAnnotationView) {
         let calloutView = CalloutView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width - 30, height: 230))
+        calloutView.name = annotation.point.locationName
         setNeedsLayout()
         layoutIfNeeded()
         calloutView.center = CGPoint(x: annotationView.bounds.size.width / 2, y: -calloutView.bounds.size.height)

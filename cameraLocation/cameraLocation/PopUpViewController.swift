@@ -11,21 +11,10 @@ import SkyFloatingLabelTextField
 import CoreLocation
 import MapKit
 
-class location {
-    
-    var latitude: Double?
-    var longitude: Double?
-    
-    init(lat: Double, long: Double) {
-        self.longitude = long
-        self.latitude = lat
-    }
-    
-}
-
 class PopUpViewController: UIViewController, UITextFieldDelegate {
-    
-    var stringFromGR = String()
+
+    var dataPoint: DataPoint!
+    var stringFromGR: String!
     @IBOutlet weak var storeNameString: SkyFloatingLabelTextField!
     @IBOutlet weak var popUpView: designView!
     @IBOutlet weak var upload: UIButton!
@@ -45,6 +34,13 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
     let apiPost = PostApi()
     
     var dictionaryN: [String: Any] = [:]
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 0.5) {
+            self.view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        }
+    }
 
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor.clear
@@ -179,12 +175,8 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
         if sender.tag == 1 {
             
             let suppplier = self.storeNameString.text
-            let locate = location(lat: 51.1111, long: -0.12121)
-            createDictionary(location: locate, supplier: suppplier!)
-            
-
-        }
-        
+            createDictionary(supplier: suppplier!)
+        }        
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -195,16 +187,14 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    func createDictionary(location: location, supplier: String) {
-        let latitude = location.latitude!
-        let longitude = location.longitude!
+    func createDictionary(supplier: String) {
         let physical = Double(forLabel1.text!)
         let chemical = Double(forLabel2.text!)
         let microbial = Double(forLabel3.text!)
         let temp = Double(forLabel4.text!)
 
         let dict: [String: Any] = [
-            "location": ["lat": latitude, "long": longitude],
+            "location": ["lat": dataPoint.lat, "long": dataPoint.long],
             "supplier": supplier,
             "facilityName": "bigfactory",
             "physicalQuality": physical!,

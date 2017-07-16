@@ -16,12 +16,12 @@ struct DataPoint {
     let long: Double
 }
 
-let locations = [
-    DataPoint(lat: 47.4771, long: -0.7893),
-    DataPoint(lat: 48.9666, long: 1.6996),
-    DataPoint(lat: 47.3524, long: 4.6304),
-    DataPoint(lat: 49.9104, long: 9.8947)
-]
+//let locations = [
+//    DataPoint(lat: 47.4771, long: -0.7893),
+//    DataPoint(lat: 48.9666, long: 1.6996),
+//    DataPoint(lat: 47.3524, long: 4.6304),
+//    DataPoint(lat: 49.9104, long: 9.8947)
+//]
 
 internal final class IdView: UIView {
     private let label = UILabel(frame: CGRect.zero)
@@ -114,10 +114,20 @@ class ViewController: UIViewController {
     fileprivate let buttonStep = BlurButton(frame: CGRect.zero)
     fileprivate let titleLabel = UILabel(frame: CGRect.zero)
     fileprivate let idView = IdView(id: nil)
+    fileprivate let fetchRequest = LoadingData()
+    fileprivate var datas: [DataStep] = [] {
+        didSet {
+            mapView.resetMap()
+            mapView.setNewPoints(points: datas)
+        }
+    }
     fileprivate var id: String? {
         didSet {
             idView.id = id
             buttonStep.isHidden = id == nil ? true : false
+            if let idProduct = id {
+                self.realoadData(id: idProduct)
+            }
         }
     }
 
@@ -133,6 +143,22 @@ class ViewController: UIViewController {
     private func setupLocation() {
         locationTracker.requestForAuthorization()
         locationTracker.startLocationTracking()
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let controller = segue.destination as? PopUpViewController,
+            let currentLocation = locationTracker.currentLocation else {
+            return
+        }
+        controller.dataPoint = DataPoint(lat: currentLocation.coordinate.latitude,
+                                         long: currentLocation.coordinate.longitude)
+        controller.stringFromGR = id ?? ""
+    }
+
+    fileprivate func realoadData(id: String) {
+        fetchRequest.fetch(id: id, closure: { [weak self] datas in
+            self?.datas = datas
+        })
     }
 }
 
@@ -152,6 +178,10 @@ extension ViewController {
         controller.delegate = self
         controller.startScanning()
         present(controller, animated: true, completion: nil)
+    }
+
+    @objc fileprivate func createNewStep() {
+        performSegue(withIdentifier: "toPopUp", sender: nil)
     }
 }
 
@@ -197,7 +227,6 @@ extension ViewController {
     }
 
     fileprivate func setupViews() {
-        mapView.setNewPoints(points: locations)
         buttonPosition.imageViewTop.image = UIImage(named: "position")
         buttonPosition.addTarget(self, action: #selector(resetPosition), for: .touchUpInside)
         buttonPosition.layer.cornerRadius = 35
@@ -205,7 +234,7 @@ extension ViewController {
         buttonScan.addTarget(self, action: #selector(scanQrCode), for: .touchUpInside)
         buttonScan.layer.cornerRadius = 25
         buttonStep.imageViewTop.image = UIImage(named: "add-step")
-        buttonStep.addTarget(self, action: #selector(scanQrCode), for: .touchUpInside)
+        buttonStep.addTarget(self, action: #selector(createNewStep), for: .touchUpInside)
         buttonStep.layer.cornerRadius = 25
         idView.id = nil
         titleLabel.textColor = UIColor.black
