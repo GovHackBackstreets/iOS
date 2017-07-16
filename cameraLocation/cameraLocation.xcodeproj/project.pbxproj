@@ -263,7 +263,7 @@
 				TargetAttributes = {
 					44D10A141F1A55610014E6AA = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 44Q2J6374R;
+						DevelopmentTeam = JT5HQ7RT7B;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -638,7 +638,7 @@
 			baseConfigurationReference = 6E02A5BE4F08ABC4C25C9C3F /* Pods-cameraLocation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 44Q2J6374R;
+				DEVELOPMENT_TEAM = JT5HQ7RT7B;
 				INFOPLIST_FILE = cameraLocation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cameraLocations;
@@ -652,7 +652,7 @@
 			baseConfigurationReference = 412851E6FF24A57679F4C370 /* Pods-cameraLocation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 44Q2J6374R;
+				DEVELOPMENT_TEAM = JT5HQ7RT7B;
 				INFOPLIST_FILE = cameraLocation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cameraLocations;
