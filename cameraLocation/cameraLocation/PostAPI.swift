@@ -12,6 +12,9 @@ class PostApi {
     
     func post(parameters: [String: Any], id: String) {
         let urlToRequest = "https://requestb.in/tu1tyitu"
+        let header = [
+            "content-type": "application/json",
+        ]
         
         print(parameters)
         
@@ -21,6 +24,7 @@ class PostApi {
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"
         request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
+        request.allHTTPHeaderFields = header
         let jsonData = try? JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
         
         request.httpBody = jsonData
