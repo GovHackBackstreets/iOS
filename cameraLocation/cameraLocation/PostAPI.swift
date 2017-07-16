@@ -8,10 +8,20 @@
 
 import Foundation
 
-class PostApi {
+class FinishedTask {
     
-    func post(parameters: [String: Any], id: String) {
-        let urlToRequest = "https://requestb.in/tu1tyitu"
+    var basic: Bool = false
+    init(basic: Bool) {
+        self.basic = basic
+    }
+    
+}
+
+class PostApi {
+
+    
+    func post(parameters: [String: Any], id: String, closure: @escaping(FinishedTask) -> Void) {
+        let urlToRequest = "https://govhacksapi.herokuapp.com/scan/1"
         let header = [
             "content-type": "application/json",
         ]
@@ -40,6 +50,14 @@ class PostApi {
             }
             let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
             print("*****This is the data 4: \(String(describing: dataString))")
+            
+            let finished = true
+            let callBack = FinishedTask(basic: finished)
+            
+            DispatchQueue.main.async {
+                closure(callBack)
+            }
+            
             
         }
         

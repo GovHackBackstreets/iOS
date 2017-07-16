@@ -33,7 +33,6 @@ class FetchMe {
         self.tempControl = json["temperatureControl"] as! Double
         self.microSafety = json["microbialSafety"] as! Double
         
-        
     }
     
 }
@@ -84,8 +83,6 @@ class LoadingData {
                 }
             
             }.resume()
-    
-        
     }
     
 }
