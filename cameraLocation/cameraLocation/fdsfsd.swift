@@ -27,7 +27,6 @@ class ViewControlleruiouio: UIViewController, QRCodeReaderViewControllerDelegate
         send.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -100).isActive = true
         send.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor, constant: 0).isActive = true
         
-        
     }
 
     lazy var readerVC: QRCodeReaderViewController = {
