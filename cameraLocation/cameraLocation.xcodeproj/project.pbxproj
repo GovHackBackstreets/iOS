@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		44D10A191F1A55610014E6AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D10A181F1A55610014E6AA /* AppDelegate.swift */; };
-		44D10A1B1F1A55610014E6AA /* fdsfsd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D10A1A1F1A55610014E6AA /* fdsfsd.swift */; };
 		44D10A1E1F1A55610014E6AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44D10A1C1F1A55610014E6AA /* Main.storyboard */; };
 		44D10A201F1A55610014E6AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44D10A1F1F1A55610014E6AA /* Assets.xcassets */; };
 		44D10A231F1A55610014E6AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44D10A211F1A55610014E6AA /* LaunchScreen.storyboard */; };
@@ -51,7 +50,6 @@
 		412851E6FF24A57679F4C370 /* Pods-cameraLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cameraLocation.release.xcconfig"; path = "Pods/Target Support Files/Pods-cameraLocation/Pods-cameraLocation.release.xcconfig"; sourceTree = "<group>"; };
 		44D10A151F1A55610014E6AA /* cameraLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cameraLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D10A181F1A55610014E6AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		44D10A1A1F1A55610014E6AA /* fdsfsd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fdsfsd.swift; sourceTree = "<group>"; };
 		44D10A1D1F1A55610014E6AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		44D10A1F1F1A55610014E6AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44D10A221F1A55610014E6AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 				BB72F4DA1F1B5B490072F592 /* LocationTripTracker.swift */,
 				BB72F4DB1F1B5B490072F592 /* MapView.swift */,
 				BB72F4DC1F1B5B490072F592 /* ViewController.swift */,
-				44D10A1A1F1A55610014E6AA /* fdsfsd.swift */,
 				44D10A461F1A79690014E6AA /* PopUpViewController.swift */,
 				44D10A481F1A7F530014E6AA /* designableView.swift */,
 				44D10A4A1F1A88390014E6AA /* PostAPI.swift */,
@@ -485,7 +482,6 @@
 				BB72F4E01F1B5B490072F592 /* ViewController.swift in Sources */,
 				44D10A4B1F1A88390014E6AA /* PostAPI.swift in Sources */,
 				BB72F4DE1F1B5B490072F592 /* LocationTripTracker.swift in Sources */,
-				44D10A1B1F1A55610014E6AA /* fdsfsd.swift in Sources */,
 				44D10A471F1A79690014E6AA /* PopUpViewController.swift in Sources */,
 				44D10A191F1A55610014E6AA /* AppDelegate.swift in Sources */,
 			);
